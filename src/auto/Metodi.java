@@ -7,7 +7,7 @@ public class Metodi {
 
     public static void aggiuntaAuto(String marcaNuova, String modelloNuovo, String prezzoNuovo){
         for (int i = 0; i < marca.length; i++){
-            if (marca[i]!=null){
+            if (marca[i]==null){
                 marca[i]=marcaNuova;
                 modello[i]=modelloNuovo;
                 prezzo[i]=prezzoNuovo;
