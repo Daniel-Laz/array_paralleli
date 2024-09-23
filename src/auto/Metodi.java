@@ -95,10 +95,32 @@ public class Metodi {
             if (marca[i]==null){
                 break;
             }
-            if (modello[i].equalsIgnoreCase("diesel")){
+            if (isDiesel(modello[i])){
                 out+= marca[i] + " - " + modello[i] + " - " + prezzo[i] +"\n";
             }
         }
         return out;
+    }
+
+    private static boolean isDiesel(String modello){
+        boolean diesel = false;
+        for (int i = 0; i< modello.length(); i++){
+            if (modello.charAt(i)=='d'){
+                if (modello.charAt(i+1)=='i'){
+                    if (modello.charAt(i+2)=='e'){
+                        if (modello.charAt(i+3)=='s'){
+                            if (modello.charAt(i+4)=='e'){
+                                if (modello.charAt(i+5)=='l'){
+                                    diesel = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+        return diesel;
     }
 }
