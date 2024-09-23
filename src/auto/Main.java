@@ -16,7 +16,9 @@ public class Main {
                     "5 - modifica dati di un auto\n" +
                     "6 - visualizza le auto in ordine crescente\n" +
                     "7 - visualizza tutti i modelli diesel\n" +
-                    "0 - termina il programma");
+                    "0 - termina il programma\n" +
+                    "\n" +
+                    "non utilizzare spazi nel modello o nella marca, usa _ o -");
             switch(in.nextInt()){
                 case 1:
                     System.out.println("inserisci in ordine : marca (INVIO) modello (INVIO) prezzo (INVIO)");

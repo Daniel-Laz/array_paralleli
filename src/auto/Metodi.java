@@ -7,6 +7,10 @@ public class Metodi {
 
     public static void aggiuntaAuto(String marcaNuova, String modelloNuovo, int prezzoNuovo){
         for (int i = 0; i < marca.length; i++){
+            if (i == 100){
+                System.out.println("errore: numero massimo di auto raggiunto");
+                break;
+            }
             if (marca[i]==null){
                 marca[i]=marcaNuova;
                 modello[i]=modelloNuovo;
@@ -105,12 +109,12 @@ public class Metodi {
     private static boolean isDiesel(String modello){
         boolean diesel = false;
         for (int i = 0; i< modello.length(); i++){
-            if (modello.charAt(i)=='d'){
-                if (modello.charAt(i+1)=='i'){
-                    if (modello.charAt(i+2)=='e'){
-                        if (modello.charAt(i+3)=='s'){
-                            if (modello.charAt(i+4)=='e'){
-                                if (modello.charAt(i+5)=='l'){
+            if (modello.charAt(i)=='d'||modello.charAt(i)=='D'){
+                if (modello.charAt(i+1)=='i'||modello.charAt(i+1)=='I'){
+                    if (modello.charAt(i+2)=='e'||modello.charAt(i+2)=='E'){
+                        if (modello.charAt(i+3)=='s'||modello.charAt(i+3)=='S'){
+                            if (modello.charAt(i+4)=='e'||modello.charAt(i+4)=='E'){
+                                if (modello.charAt(i+5)=='l'||modello.charAt(i+5)=='L'){
                                     diesel = true;
                                     break;
                                 }
