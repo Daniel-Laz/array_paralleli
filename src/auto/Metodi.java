@@ -7,10 +7,6 @@ public class Metodi {
 
     public static void aggiuntaAuto(String marcaNuova, String modelloNuovo, int prezzoNuovo){
         for (int i = 0; i < marca.length; i++){
-            if (i == 100){
-                System.out.println("errore: numero massimo di auto raggiunto");
-                break;
-            }
             if (marca[i]==null){
                 marca[i]=marcaNuova;
                 modello[i]=modelloNuovo;
