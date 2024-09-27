@@ -34,7 +34,7 @@ public class Metodi {
     public static void cancellaAuto(String deleteMarca, String deleteModello){
         for (int i = 0; i< marca.length && marca[i]!=null; i++){
             if (deleteMarca.equalsIgnoreCase(marca[i]) && deleteModello.equalsIgnoreCase(modello[i])){
-                for (int j=i; j<marca.length && marca[i]!=null; j++){
+                for (int j=i; j<marca.length-1 && marca[i]!=null; j++){
                     marca[j]=marca[j+1];
                     modello[j]=modello[j+1];
                     prezzo[j]=prezzo[j+1];
