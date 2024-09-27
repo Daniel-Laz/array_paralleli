@@ -21,36 +21,24 @@ public class Metodi {
     }
     public static String stampaAuto(){
         String out = "";
-        for (int i = 0; i < marca.length; i++){
-            if (marca[i]==null){
-                break;
-            }
+        for (int i = 0; i < marca.length && marca[i]!=null; i++){
             out+= marca[i] + " - " + modello[i] + " - " + prezzo[i] +"\n";
         }
         return out;
     }
     public static String trovaAuto(String findMarca, String findModello){
         String out = "";
-        for (int i = 0; i< marca.length; i++){
+        for (int i = 0; i< marca.length && marca[i]!=null; i++){
             if (findMarca.equalsIgnoreCase(marca[i]) && findModello.equalsIgnoreCase(modello[i])){
                 out+= marca[i] + " - " + modello[i] + " - " + prezzo[i] +"\n";
-            }
-            if (marca[i]==null){
-                break;
             }
         }
         return out;
     }
     public static void cancellaAuto(String deleteMarca, String deleteModello){
-        for (int i = 0; i< marca.length; i++){
-            if (marca[i]==null){
-                break;
-            }
+        for (int i = 0; i< marca.length && marca[i]!=null; i++){
             if (deleteMarca.equalsIgnoreCase(marca[i]) && deleteModello.equalsIgnoreCase(modello[i])){
-                for (int j=i; j<marca.length-1; j++){
-                    if (marca[j]==null){
-                        break;
-                    }
+                for (int j=i; j<marca.length && marca[i]!=null; j++){
                     marca[j]=marca[j+1];
                     modello[j]=modello[j+1];
                     prezzo[j]=prezzo[j+1];
@@ -60,19 +48,16 @@ public class Metodi {
         }
     }
     public static void editAuto(String findMarca, String findModello, String editMarca, String editModello, int editPrezzo){
-        for (int i = 0; i< marca.length; i++){
+        for (int i = 0; i< marca.length && marca[i]!=null; i++){
             if (findMarca.equalsIgnoreCase(marca[i]) && findModello.equalsIgnoreCase(modello[i])){
                 marca[i]=editMarca;
                 modello[i]=editModello;
                 prezzo[i]=editPrezzo;
             }
-            if (marca[i]==null){
-                break;
-            }
         }
     }
     public static String stampaSortPrezzo(){
-        for (int i = 0; i < marca.length - 1; i++) {
+        for (int i = 0; i < marca.length - 1 && marca[i]!=null; i++) {
             int minimo = i;
             for (int j = i + 1; j < marca.length; j++) {
                 if (prezzo[j] < prezzo[minimo] && prezzo[j]!=0)
@@ -87,18 +72,12 @@ public class Metodi {
             String temp2 = modello[minimo];
             modello[minimo] = modello[i];
             modello[i] = temp2;
-            if (marca[i]==null){
-                break;
-            }
         }
         return stampaAuto();
     }
     public static String filterDiesel(){
         String out = "";
-        for (int i = 0; i < marca.length; i++){
-            if (marca[i]==null){
-                break;
-            }
+        for (int i = 0; i < marca.length && marca[i]!=null; i++){
             if (isDiesel(modello[i])){
                 out+= marca[i] + " - " + modello[i] + " - " + prezzo[i] +"\n";
             }
