@@ -74,32 +74,10 @@ public class Metodi {
     public static String filterDiesel(){
         String out = "";
         for (int i = 0; i < marca.length && marca[i]!=null; i++){
-            if (isDiesel(modello[i])){
+            if (modello[i].contains("diesel")){
                 out+= marca[i] + " - " + modello[i] + " - " + prezzo[i] +"\n";
             }
         }
         return out;
-    }
-
-    private static boolean isDiesel(String modello){
-        boolean diesel = false;
-        for (int i = 0; i< modello.length(); i++){
-            if (modello.charAt(i)=='d'||modello.charAt(i)=='D'){
-                if (modello.charAt(i+1)=='i'||modello.charAt(i+1)=='I'){
-                    if (modello.charAt(i+2)=='e'||modello.charAt(i+2)=='E'){
-                        if (modello.charAt(i+3)=='s'||modello.charAt(i+3)=='S'){
-                            if (modello.charAt(i+4)=='e'||modello.charAt(i+4)=='E'){
-                                if (modello.charAt(i+5)=='l'||modello.charAt(i+5)=='L'){
-                                    diesel = true;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            
-        }
-        return diesel;
     }
 }
